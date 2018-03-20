@@ -14,7 +14,7 @@ const saveStore = (state: object) => {
   try {
     localStorage.setItem('stage', JSON.stringify(state));
   } catch (err) {
-    console.error('Failed save state in localStorage!');
+    throw Error('Failed save state in localStorage!');
   }
 };
 

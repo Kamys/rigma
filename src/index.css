@@ -1,0 +1,19 @@
+html {
+    background: url(./image/mainBackground.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.pt-1 {
+    padding-top: 3%;
+}
+
+.pl-1 {
+    padding-left: 3%;
+}
+
+.card-content {
+ padding: 10px !important;
+}
