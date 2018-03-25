@@ -1,10 +1,15 @@
 import * as React from 'react';
 import { connect, Dispatch } from 'react-redux';
-import { Badge, Card, CardTitle, Col, Collection, CollectionItem, Icon, Row } from 'react-materialize';
+import { Col, Icon, Row } from 'react-materialize';
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
 
 export namespace Lesson {
     export interface Props {
-        /*...*/
+        name: string;
+        lessonNumber: number;
+        teacherFullName: string;
+        location: string;
     }
 
     export interface State {
@@ -31,32 +36,37 @@ export class LessonComponent extends React.Component<Lesson.Props, Lesson.State>
     }
 
     render() {
+        const {name, lessonNumber, location, teacherFullName} = this.props;
         return (
-            <Col m={7} s={8}>
-                <Card
-                    style={{
-                        // margin:
-                    }}
-                    header={<h5 className="white-text pt-1 pl-1"><b>Матемитика</b></h5>}
-                    className="blue-grey darken-1"
-                    textClassName="white-text"
-                >
-                    <Row>
-                        <Col m={7} s={12}>
-                            <Row>
-                                <Col m={1} s={1}><Icon>account_circle</Icon></Col>
-                                <Col className="valign-wrapper"><b>Иванов Петечкин</b></Col>
-                            </Row>
-                        </Col>
-                        <Col m={7} s={12}>
-                            <Row>
-                                <Col m={1} s={1}><Icon>account_circle</Icon></Col>
-                                <Col className="valign-wrapper"><b>302н</b></Col>
-                            </Row>
-                        </Col>
-                    </Row>
-                </Card>
-            </Col>
+            <VerticalTimelineElement
+                className="vertical-timeline-element--work"
+                date="12:30 - 13:00"
+                iconStyle={{background: 'rgb(33, 150, 243)', color: '#fff'}}
+                icon={<h3 className="lesson__number">{lessonNumber}</h3>}
+
+            >
+                <Row>
+                    <Col>
+                        <h3 className="vertical-timeline-element-title">{name}</h3>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Icon className="lesson__location_icon">account_circle</Icon>
+                    </Col>
+                    <Col>
+                        <h4 className="vertical-timeline-element-subtitle">{teacherFullName}</h4>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Icon className="lesson__location_icon">location_on</Icon>
+                    </Col>
+                    <Col>
+                        <h4 className="vertical-timeline-element-subtitle">{location}</h4>
+                    </Col>
+                </Row>
+            </VerticalTimelineElement>
         );
     }
 }

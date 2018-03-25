@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { connect, Dispatch } from 'react-redux';
-import { Badge, Card, CardTitle, Col, Collection, CollectionItem, Row } from 'react-materialize';
+import { Col, Icon, Row } from 'react-materialize';
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
 import { LessonComponent } from './components/Lesson';
 
 export namespace App {
@@ -33,20 +35,20 @@ export class AppComponent extends React.Component<App.Props, App.State> {
 
     render() {
         return (
-            <Row>
-                <Col m={4} s={12}>
-                    <LessonComponent/>
-                </Col>
-                <Col m={4} s={12}>
-                    <LessonComponent/>
-                </Col>
-                <Col m={4} s={12}>
-                    <LessonComponent/>
-                </Col>
-                <Col m={4} s={12}>
-                    <LessonComponent/>
-                </Col>
-            </Row>
+            <VerticalTimeline>
+                <LessonComponent
+                    name="Математика"
+                    lessonNumber={3}
+                    location="203н"
+                    teacherFullName="Коптелова Л.В."
+                />
+                <LessonComponent
+                    name="Физика"
+                    lessonNumber={4}
+                    location="401"
+                    teacherFullName="Коптелова Л.В."
+                />
+            </VerticalTimeline>
         );
     }
 }

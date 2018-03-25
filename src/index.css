@@ -6,14 +6,35 @@ html {
     background-size: cover;
 }
 
-.pt-1 {
-    padding-top: 3%;
-}
-
-.pl-1 {
-    padding-left: 3%;
-}
-
 .card-content {
- padding: 10px !important;
+    padding: 10px !important;
+}
+
+.vertical-timeline-element-content .vertical-timeline-element-date {
+    left: 134%;
+    color: white;
+}
+
+.vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left)
+.vertical-timeline-element-content .vertical-timeline-element-date {
+    right: 134%;
+}
+
+.as-line {
+    display: inline;
+}
+
+.lesson__location_icon {
+    font-size: 35px;
+}
+
+.lesson__number {
+    text-align: center;
+    margin: 7px auto;
+    width: 50px;
+    height: 50px;
+}
+
+.vertical-timeline-element-content {
+    padding: 1em
 }
