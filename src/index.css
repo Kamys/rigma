@@ -12,7 +12,7 @@ html {
 
 .vertical-timeline-element-content .vertical-timeline-element-date {
     left: 134%;
-    color: white;
+    color: #161616;
 }
 
 .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left)
@@ -37,4 +37,11 @@ html {
 
 .vertical-timeline-element-content {
     padding: 1em
+}
+
+.nav-bar__title {
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-shadow: 2px 5px 5px rgba(0,0,0,0.3);
 }
