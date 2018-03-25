@@ -46,7 +46,13 @@ export class AppComponent extends React.Component<App.Props, App.State> {
                     name="Физика"
                     lessonNumber={4}
                     location="401"
-                    teacherFullName="Коптелова Л.В."
+                    teacherFullName="Александров В.В."
+                />
+                <LessonComponent
+                    name="Литература"
+                    lessonNumber={5}
+                    location="302"
+                    teacherFullName="Шевченко Е.И."
                 />
             </VerticalTimeline>
         );
