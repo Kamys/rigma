@@ -39,11 +39,10 @@ export class LessonComponent extends React.Component<Lesson.Props, Lesson.State>
         const {name, lessonNumber, location, teacherFullName} = this.props;
         return (
             <VerticalTimelineElement
-                className="vertical-timeline-element--work"
-                date={<Row><Col><h5>12:30 - 13:00</h5></Col></Row>}
+                className="lesson vertical-timeline-element--work"
+                date={'12:30 - 13:00'}
                 iconStyle={{background: 'rgb(33, 150, 243)', color: '#fff'}}
                 icon={<h3 className="lesson__number">{lessonNumber}</h3>}
-
             >
                 <Row>
                     <Col>

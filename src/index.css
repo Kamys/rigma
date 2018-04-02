@@ -4,6 +4,11 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.as-line {
+    display: inline;
 }
 
 .card-content {
@@ -12,7 +17,6 @@ html {
 
 .vertical-timeline-element-content .vertical-timeline-element-date {
     left: 134%;
-    color: #161616;
 }
 
 .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left)
@@ -20,10 +24,15 @@ html {
     right: 134%;
 }
 
-.as-line {
-    display: inline;
+.lesson {
+    font-weight: 600
 }
 
+.lesson .vertical-timeline-element-date {
+    font-size: 1.20em;
+    padding: .5em 0;
+    color: red;
+}
 .lesson__location_icon {
     font-size: 35px;
 }
@@ -31,8 +40,6 @@ html {
 .lesson__number {
     text-align: center;
     margin: 7px auto;
-    width: 50px;
-    height: 50px;
 }
 
 .vertical-timeline-element-content {
@@ -44,4 +51,11 @@ html {
     margin-top: 5px;
     margin-bottom: 5px;
     text-shadow: 2px 5px 5px rgba(0,0,0,0.3);
+}
+
+@media only screen and (max-width: 768px) {
+    .lesson__number {
+        text-align: center;
+        margin: auto;
+    }
 }
