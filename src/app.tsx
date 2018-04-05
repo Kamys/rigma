@@ -3,7 +3,9 @@ import { connect, Dispatch } from 'react-redux';
 import { Footer, Navbar, NavItem, Tab, Tabs } from 'react-materialize';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import { LessonComponent } from './components/Lesson';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.scss';
+import 'slick-carousel/slick/slick-theme.scss';
 
 export namespace App {
     export interface Props {
@@ -34,42 +36,39 @@ export class AppComponent extends React.Component<App.Props, App.State> {
     }
 
     render() {
-        return (
-            <>
-                <Navbar
-                    brand={<h1 className="nav-bar__title">Rigma</h1>}
-                    right={true}
-                    fixed={true}
-                    className="teal lighten-2"
-                />
 
-                <VerticalTimeline>
-                    <LessonComponent
-                        name="Математика"
-                        lessonNumber={3}
-                        location="203н"
-                        teacherFullName="Коптелова Л.В."
-                    />
-                    <LessonComponent
-                        name="Физика"
-                        lessonNumber={4}
-                        location="401"
-                        teacherFullName="Александров В.В."
-                    />
-                    <LessonComponent
-                        name="Литература"
-                        lessonNumber={5}
-                        location="302"
-                        teacherFullName="Шевченко Е.И."
-                    />
-                </VerticalTimeline>
-                <Footer
-                    className="teal lighten-2"
-                    moreLinks={
-                        <a className="grey-text text-lighten-4 right">@ 2018 created Nikita Kamyshenko</a>
-                    }
-                />
-            </>
+        const settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        };
+
+        return (
+            <div>
+                <h2> Single Item</h2>
+                <Slider {...settings}>
+                    <div>
+                        <h3>1</h3>
+                    </div>
+                    <div>
+                        <h3>2</h3>
+                    </div>
+                    <div>
+                        <h3>3</h3>
+                    </div>
+                    <div>
+                        <h3>4</h3>
+                    </div>
+                    <div>
+                        <h3>5</h3>
+                    </div>
+                    <div>
+                        <h3>6</h3>
+                    </div>
+                </Slider>
+            </div>
         );
     }
 }
