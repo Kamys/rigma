@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect, Dispatch } from 'react-redux';
-import { Col, Icon, Row } from 'react-materialize';
+import { Card, Col, Icon, Row } from 'react-materialize';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
@@ -38,11 +38,9 @@ export class LessonComponent extends React.Component<Lesson.Props, Lesson.State>
     render() {
         const {name, lessonNumber, location, teacherFullName} = this.props;
         return (
-            <VerticalTimelineElement
-                className="lesson vertical-timeline-element--work"
-                date={'12:30 - 13:00'}
-                iconStyle={{background: 'rgb(33, 150, 243)', color: '#fff'}}
-                icon={<h3 className="lesson__number">{lessonNumber}</h3>}
+            <Card
+                className="teal lighten-1 z-depth-5"
+                textClassName="white-text"
             >
                 <Row>
                     <Col>
@@ -65,7 +63,7 @@ export class LessonComponent extends React.Component<Lesson.Props, Lesson.State>
                         <h4 className="vertical-timeline-element-subtitle">{location}</h4>
                     </Col>
                 </Row>
-            </VerticalTimelineElement>
+            </Card>
         );
     }
 }

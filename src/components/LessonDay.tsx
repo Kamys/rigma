@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { connect, Dispatch } from 'react-redux';
-import { Badge, Card, CardTitle, Col, Collection, CollectionItem, Row } from 'react-materialize';
+import { LessonComponent } from './Lesson';
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import { Card } from 'react-materialize';
 
 export namespace LessonDay {
     export interface Props {
-        /*...*/
+        name: string;
     }
 
     export interface State {
@@ -20,13 +22,6 @@ const mapDispatchToProps = (dispatch: Dispatch<any>) => ({
     /*...*/
 });
 
-const lessonList = [
-    'История',
-    'Математика',
-    'Физра',
-    'Геометрия',
-];
-
 @(connect(mapStateToProps, mapDispatchToProps) as any)
 export class LessonDayComponent extends React.Component<LessonDay.Props, LessonDay.State> {
     state = {
@@ -39,27 +34,26 @@ export class LessonDayComponent extends React.Component<LessonDay.Props, LessonD
 
     render() {
         return (
-            <Card
-                header={<h4 className="white-text center">Пн</h4>}
-                className="teal lighten-1"
-                textClassName="white-text"
-            >
-                <Collection className="teal lighten-1">
-                    {lessonList.map((lesson, index) => (
-                        <CollectionItem key={index} className="teal lighten-1">
-                            <Row>
-                                <Col>
-                                    <Row>10:20</Row>
-                                    <Row>12:30</Row>
-                                </Col>
-                                <Col className="text-center">
-                                    <b>{lesson}</b>
-                                </Col>
-                            </Row>
-                        </CollectionItem>
-                    ))}
-                </Collection>
-            </Card>
+            <div className="container">
+                <LessonComponent
+                    name="Математика"
+                    lessonNumber={3}
+                    location="203н"
+                    teacherFullName="Коптелова Л.В."
+                />
+                <LessonComponent
+                    name="Физика"
+                    lessonNumber={4}
+                    location="401"
+                    teacherFullName="Александров В.В."
+                />
+                <LessonComponent
+                    name="Литература"
+                    lessonNumber={5}
+                    location="302"
+                    teacherFullName="Шевченко Е.И."
+                />
+            </div>
         );
     }
 }

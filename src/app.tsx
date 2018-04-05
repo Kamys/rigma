@@ -1,11 +1,14 @@
 import * as React from 'react';
 import { connect, Dispatch } from 'react-redux';
-import { Footer, Navbar, NavItem, Tab, Tabs } from 'react-materialize';
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import {
+    Badge, Card, CardTitle, Col, Collection, CollectionItem, Footer, Icon, Navbar, NavItem, Row, Tab,
+    Tabs
+} from 'react-materialize';
 import 'react-vertical-timeline-component/style.min.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.scss';
 import 'slick-carousel/slick/slick-theme.scss';
+import { LessonDayComponent } from './components/LessonDay';
 
 export namespace App {
     export interface Props {
@@ -40,35 +43,45 @@ export class AppComponent extends React.Component<App.Props, App.State> {
         const settings = {
             dots: true,
             infinite: true,
-            speed: 500,
             slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            adaptiveHeight: true
         };
 
         return (
-            <div>
-                <h2> Single Item</h2>
-                <Slider {...settings}>
-                    <div>
-                        <h3>1</h3>
-                    </div>
-                    <div>
-                        <h3>2</h3>
-                    </div>
-                    <div>
-                        <h3>3</h3>
-                    </div>
-                    <div>
-                        <h3>4</h3>
-                    </div>
-                    <div>
-                        <h3>5</h3>
-                    </div>
-                    <div>
-                        <h3>6</h3>
-                    </div>
-                </Slider>
-            </div>
+            <>
+                <Navbar
+                    brand={<h1 className="nav-bar__title">Rigma</h1>}
+                    right={true}
+                    fixed={true}
+                    className="teal lighten-2"
+                />
+                <div className="slider_container">
+                    <Slider {...settings}>
+                        <div>
+                            <LessonDayComponent
+                                name="Математика 1"
+                            />
+                        </div>
+                        <div>
+                            <LessonDayComponent
+                                name="Математика 2"
+                            />
+                        </div>
+                        <div>
+                            <LessonDayComponent
+                                name="Математика 3"
+                            />
+                        </div>
+                    </Slider>
+                </div>
+                <Footer
+                    className="teal lighten-2"
+                    moreLinks={
+                        <a className="grey-text text-lighten-4 right">@ 2018 created Nikita Kamyshenko</a>
+                    }
+                />
+            </>
         );
     }
 }
