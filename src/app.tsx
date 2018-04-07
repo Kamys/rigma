@@ -5,7 +5,6 @@ import {
     Tabs
 } from 'react-materialize';
 import 'react-vertical-timeline-component/style.min.css';
-import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.scss';
 import 'slick-carousel/slick/slick-theme.scss';
 import { LessonDayComponent } from './components/LessonDay';
@@ -56,31 +55,25 @@ export class AppComponent extends React.Component<App.Props, App.State> {
                     fixed={true}
                     className="teal lighten-2"
                 />
-                <div className="slider_container">
-                    <Slider {...settings}>
-                        <div>
-                            <LessonDayComponent
-                                name="Математика 1"
-                            />
-                        </div>
-                        <div>
-                            <LessonDayComponent
-                                name="Математика 2"
-                            />
-                        </div>
-                        <div>
-                            <LessonDayComponent
-                                name="Математика 3"
-                            />
-                        </div>
-                    </Slider>
-                </div>
-                <Footer
-                    className="teal lighten-2"
-                    moreLinks={
-                        <a className="grey-text text-lighten-4 right">@ 2018 created Nikita Kamyshenko</a>
-                    }
-                />
+                <Tabs tabOptions={{swipeable: true}} className="teal lighten-2 z-depth-1">
+                    <Tab className={'white-text'} active={true} title="ПН">
+                        <LessonDayComponent name="Математика 1"/>
+                    </Tab>
+                    <Tab title="ВТ" active={true}>
+                        <LessonDayComponent name="Математика 2"/>
+                    </Tab>
+                    <Tab title="СР">
+                        <LessonDayComponent name="Математика 3"/>
+                    </Tab>
+                    <Tab title="ЧТ">Test 4</Tab>
+                    <Tab title="ПТ">Test 4</Tab>
+                </Tabs>
+                    <Footer
+                        className="teal lighten-2"
+                        moreLinks={
+                            <a className="grey-text text-lighten-4 right">@ 2018 created Nikita Kamyshenko</a>
+                        }
+                    />
             </>
         );
     }

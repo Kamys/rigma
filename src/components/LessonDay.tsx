@@ -36,7 +36,7 @@ export class LessonDayComponent extends React.Component<LessonDay.Props, LessonD
         return (
             <div className="container">
                 <LessonComponent
-                    name="Математика"
+                    name={this.props.name}
                     lessonNumber={3}
                     location="203н"
                     teacherFullName="Коптелова Л.В."

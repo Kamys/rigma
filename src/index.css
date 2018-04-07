@@ -15,17 +15,23 @@ html {
     margin-left: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
-    text-shadow: 2px 5px 5px rgba(0,0,0,0.3);
+    text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
-html, body, #root, .slider_container{
-    height: 103%;
+.tabs .tab a {
+    color: white;
 }
 
-
-@media only screen and (max-width: 768px) {
-    .lesson__number {
-        text-align: center;
-        margin: auto;
-    }
+.tabs .tab a:hover, .tabs .tab a.active {
+    color: white;
 }
+
+/*footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}*/
+
+.tabs-content.carousel .carousel-item { height:auto; }
