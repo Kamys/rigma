@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { connect, Dispatch } from 'react-redux';
 import { Card, Col, Icon, Row } from 'react-materialize';
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
 
 export namespace Lesson {
     export interface Props {
@@ -49,7 +47,7 @@ export class LessonComponent extends React.Component<Lesson.Props, Lesson.State>
                 </Row>
                 <Row>
                     <Col>
-                        <Icon className="lesson__location_icon">account_circle</Icon>
+                        <Icon className="lesson__location_icon md-36">account_circle</Icon>
                     </Col>
                     <Col>
                         <h4 className="vertical-timeline-element-subtitle">{teacherFullName}</h4>

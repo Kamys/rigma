@@ -5,17 +5,14 @@
   "dependencies": {
     "@types/react-redux": "^5.0.15",
     "jquery": "^3.3.1",
+    "materialize-css": "^0.100.2",
     "react": "^16.3.1",
     "react-dom": "^16.2.0",
     "react-materialize": "^2.1.0",
     "react-redux": "^5.0.7",
     "react-scripts-ts": "2.13.0",
-    "react-slick": "^0.22.3",
-    "react-vertical-timeline-component": "^2.0.5",
     "redux": "^3.7.2",
-    "redux-devtools-extension": "^2.13.2",
-    "redux-saga": "^0.16.0",
-    "slick-carousel": "^1.8.1"
+    "redux-saga": "^0.16.0"
   },
   "scripts": {
     "start": "react-scripts-ts start",
@@ -31,6 +28,7 @@
     "node-sass": "^4.8.3",
     "redux-devtools": "^3.4.1",
     "sass-loader": "^6.0.7",
-    "typescript": "^2.7.2"
+    "typescript": "^2.7.2",
+    "redux-devtools-extension": "^2.13.2"
   }
 }

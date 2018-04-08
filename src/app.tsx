@@ -1,12 +1,6 @@
 import * as React from 'react';
 import { connect, Dispatch } from 'react-redux';
-import {
-    Badge, Card, CardTitle, Col, Collection, CollectionItem, Footer, Icon, Navbar, NavItem, Row, Tab,
-    Tabs
-} from 'react-materialize';
-import 'react-vertical-timeline-component/style.min.css';
-import 'slick-carousel/slick/slick.scss';
-import 'slick-carousel/slick/slick-theme.scss';
+import { Footer, Navbar, NavItem, Tab, Tabs } from 'react-materialize';
 import { LessonDayComponent } from './components/LessonDay';
 
 export namespace App {

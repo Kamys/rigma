@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { connect, Dispatch } from 'react-redux';
 import { LessonComponent } from './Lesson';
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { Card } from 'react-materialize';
 
 export namespace LessonDay {
