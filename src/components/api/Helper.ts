@@ -52,3 +52,7 @@ export const parse = function <E, V>(callback: (entity: E) => V, entity: E): V {
         throw {error};
     }
 };
+
+export const parseKeyValue = function (keyValue: IKeyValue): { key: number, name: string } {
+    return {key: doOrError(() => keyValue.key), name: doOrError(() => (keyValue.value))};
+};
