@@ -3,14 +3,14 @@ import { connect, Dispatch } from 'react-redux';
 import { Card, Col, Icon, Row } from 'react-materialize';
 
 export namespace Lesson {
-    export interface Props {
+    export interface IProps {
         name: string;
         lessonNumber: number;
         teacherFullName: string;
         location: string;
     }
 
-    export interface State {
+    export interface IState {
         /*...*/
     }
 }
@@ -24,12 +24,12 @@ const mapDispatchToProps = (dispatch: Dispatch<any>) => ({
 });
 
 @(connect(mapStateToProps, mapDispatchToProps) as any)
-export class LessonComponent extends React.Component<Lesson.Props, Lesson.State> {
+export class LessonComponent extends React.Component<Lesson.IProps, Lesson.IState> {
     state = {
         /*...*/
     };
 
-    constructor(props: Lesson.Props, context?: object) {
+    constructor(props: Lesson.IProps, context?: object) {
         super(props, context);
     }
 

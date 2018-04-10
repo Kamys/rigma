@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { connect, Dispatch } from 'react-redux';
 import { Footer, Navbar, NavItem } from 'react-materialize';
+import { SelectScheduleComponent } from './components/SelectSchedule/SelectSchedule';
 
 export namespace App {
-    export interface Props {
+    export interface IProps {
         /*...*/
     }
 
-    export interface State {
+    export interface IState {
         /*...*/
     }
 }
@@ -21,12 +22,12 @@ const mapDispatchToProps = (dispatch: Dispatch<any>) => ({
 });
 
 @(connect(mapStateToProps, mapDispatchToProps) as any)
-export class AppComponent extends React.Component<App.Props, App.State> {
+export class AppComponent extends React.Component<App.IProps, App.IState> {
     state = {
         /*...*/
     };
 
-    constructor(props: App.Props, context?: object) {
+    constructor(props: App.IProps, context?: object) {
         super(props, context);
     }
 
@@ -39,7 +40,9 @@ export class AppComponent extends React.Component<App.Props, App.State> {
                     fixed={true}
                     className="teal lighten-2"
                 />
-
+                <div className={'container'}>
+                    <SelectScheduleComponent/>
+                </div>
                 <Footer
                     className="teal lighten-2"
                     moreLinks={

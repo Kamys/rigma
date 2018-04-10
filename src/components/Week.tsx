@@ -4,11 +4,11 @@ import { Tab, Tabs } from 'react-materialize';
 import { LessonDayComponent } from './LessonDay';
 
 export namespace Week {
-    export interface Props {
+    export interface IProps {
         /*...*/
     }
 
-    export interface State {
+    export interface IState {
         /*...*/
     }
 }
@@ -22,12 +22,12 @@ const mapDispatchToProps = (dispatch: Dispatch<any>) => ({
 });
 
 @(connect(mapStateToProps, mapDispatchToProps) as any)
-export class WeekComponent extends React.Component<Week.Props, Week.State> {
+export class WeekComponent extends React.Component<Week.IProps, Week.IState> {
     state = {
         /*...*/
     };
 
-    constructor(props: Week.Props, context?: object) {
+    constructor(props: Week.IProps, context?: object) {
         super(props, context);
     }
 

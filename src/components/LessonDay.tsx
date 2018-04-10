@@ -4,11 +4,11 @@ import { LessonComponent } from './Lesson';
 import { Card } from 'react-materialize';
 
 export namespace LessonDay {
-    export interface Props {
+    export interface IProps {
         name: string;
     }
 
-    export interface State {
+    export interface IState {
         /*...*/
     }
 }
@@ -22,12 +22,12 @@ const mapDispatchToProps = (dispatch: Dispatch<any>) => ({
 });
 
 @(connect(mapStateToProps, mapDispatchToProps) as any)
-export class LessonDayComponent extends React.Component<LessonDay.Props, LessonDay.State> {
+export class LessonDayComponent extends React.Component<LessonDay.IProps, LessonDay.IState> {
     state = {
         /*...*/
     };
 
-    constructor(props: LessonDay.Props, context?: object) {
+    constructor(props: LessonDay.IProps, context?: object) {
         super(props, context);
     }
 
