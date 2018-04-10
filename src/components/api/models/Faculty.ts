@@ -1,25 +1,25 @@
-import { IKeyValue } from '../Helper';
-import { getAllFaculty } from '../API';
+import { doOrDefault, doOrError, IKeyValue, parseAll } from '../Helper';
 
 export namespace Faculty {
+
     export interface IEntity {
         readonly faculty: IKeyValue;
         readonly isActiveSchedule: boolean;
     }
 
-    export class Model {
-        getName = (): string => {
-            return this.entity.faculty.value;
-        }
-        getKey = (): number => {
-            return this.entity.faculty.key;
-        }
-        private entity: IEntity;
+    export const parseView = function(entities: IEntity[]): IView[] {
+        return parseAll((entity: IEntity) => {
+            return {
+                name: doOrError(() => entity.faculty.value),
+                key: doOrError(() => entity.faculty.key),
+                isActiveSchedule: doOrDefault(() => entity.isActiveSchedule, false),
+            };
+        }, entities);
+    };
 
-        constructor(entity: Faculty.IEntity) {
-            this.entity = entity;
-        }
+    export interface IView {
+        name: string;
+        key: number;
+        isActiveSchedule: boolean;
     }
-
-    export const getAll = getAllFaculty;
 }

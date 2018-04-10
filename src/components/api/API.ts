@@ -1,7 +1,8 @@
 import { Faculty } from './models/Faculty';
+import parseView = Faculty.parseView;
 
 const jsonData: Faculty.IEntity[] = require('./jsonData/getFaculties.json');
 
-export function getAllFaculty(): Faculty.Model[] {
-    return jsonData.map(value => new Faculty.Model(value));
+export function getAllFaculty(): Faculty.IView[] {
+    return parseView(jsonData);
 }

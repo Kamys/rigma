@@ -3,6 +3,7 @@ import { connect, Dispatch } from 'react-redux';
 import { Collapsible, CollapsibleItem } from 'react-materialize';
 import './SelectSchedule.css';
 import { Faculty } from '../api/models/Faculty';
+import { getAllFaculty } from '../api/API';
 
 function Title(props: { text: string }) {
     return (
@@ -43,14 +44,14 @@ export class SelectScheduleComponent extends React.Component<SelectSchedule.IPro
     }*/
 
     render() {
-        let faculties: Faculty.Model[] = Faculty.getAll();
+        let faculties: Faculty.IView[] = getAllFaculty();
         return (
             <Collapsible popout={true}>
                 {faculties.map(faculty => (
                     <CollapsibleItem
-                        key={faculty.getKey()}
+                        key={faculty.key}
                         className="teal lighten-2"
-                        header={<Title text={faculty.getName()}/>}
+                        header={<Title text={faculty.name}/>}
                         /*onClike={this.selectItem}*/
                     >
                         Lorem ipsum dolor sit amet.
